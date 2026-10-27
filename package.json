@@ -1,0 +1,80 @@
+{
+  "name": "koishi-plugin-local-package-upload",
+  "description": "Koishi 本地插件上传",
+  "version": "0.0.1",
+  "main": "lib/index.js",
+  "typings": "lib/index.d.ts",
+  "files": [
+    "lib",
+    "dist"
+  ],
+  "license": "MIT",
+  "scripts": {
+    "build": "npm run build:backend && npm run build:client",
+    "build:backend": "tsc",
+    "build:client": "vite build",
+    "dev": "tsc -w",
+    "dev:client": "vite build --watch",
+    "clean": "rimraf lib dist"
+  },
+  "keywords": [
+    "chatbot",
+    "koishi",
+    "plugin",
+    "upload",
+    "local",
+    "archive",
+    "tgz",
+    "chunk",
+    "websocket",
+    "console",
+    "installer",
+    "package",
+    "本地上传",
+    "归档",
+    "分片",
+    "插件安装",
+    "依赖管理"
+  ],
+  "devDependencies": {
+    "@koishijs/client": "^5.30.11",
+    "@koishijs/console": "^5.30.11",
+    "@vitejs/plugin-vue": "^5.2.1",
+    "rimraf": "^5.0.5",
+    "typescript": "^5.3.3",
+    "vite": "^5.4.21",
+    "vue": "^3.5.13"
+  },
+  "peerDependencies": {
+    "koishi": "^4.18.7"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Minecraft-1314/koishi-plugin-local-package-upload.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Minecraft-1314/koishi-plugin-local-package-upload/issues"
+  },
+  "homepage": "https://github.com/Minecraft-1314/koishi-plugin-local-package-upload#readme",
+  "engines": {
+    "node": ">=16.0.0"
+  },
+  "koishi": {
+    "public": [
+      "dist"
+    ],
+    "description": {
+      "en": "Local plugin archive upload service with console UI, chunked transfer and safe validation",
+      "zh": "本地插件上传"
+    },
+    "service": {
+      "optional": [
+        "console",
+        "installer"
+      ]
+    }
+  },
+  "dependencies": {
+    "tar": "^7.5.22"
+  }
+}
